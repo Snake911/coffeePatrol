@@ -21,6 +21,10 @@ const positionSchema = new Schema({
     category:{
         ref:'categories',
         type: Schema.Types.ObjectId
+    },
+    cafe:{
+        ref:'cafes',
+        type: Schema.Types.ObjectId
     }
 })
 

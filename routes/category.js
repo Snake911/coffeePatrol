@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport')
 const controller = require('../controllers/category');
+const upload = require('../middleware/upload');
 
 router.get('/:cafeId', passport.authenticate('jwt', {session: false}),controller.getByCafeId);
 router.post('/', controller.create);

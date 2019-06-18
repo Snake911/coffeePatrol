@@ -3,7 +3,7 @@ const router = express.Router();
 const controller = require('../controllers/comment');
 
 router.get('/:cafeId', controller.getByCafeId);
-router.get('/:login', controller.getByLogin);
+router.get('/', controller.getByLogin);
 router.post('/', controller.create);
 router.patch('/:id', controller.update);
 router.delete('/:id', controller.remove);

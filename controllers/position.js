@@ -19,7 +19,8 @@ module.exports.create = async function(req, res) {
             volume: req.body.volume,
             price: req.body.price,
             description: req.body.description,
-            category: req.body.category
+            category: req.body.category,
+            cafe: req.body.cafe
         }).save();
         res.status(201).json(position);
     } catch (e) {
@@ -27,7 +28,7 @@ module.exports.create = async function(req, res) {
     }
 }
 
-module.exports.update = async function(req, res) {
+module.exports.remove = async function(req, res) {
     try {
         await Position.remove({_id: req.params.id});
         res.status(200).json({
@@ -39,7 +40,7 @@ module.exports.update = async function(req, res) {
 }
 
 
-module.exports.remove = async function(req, res) {
+module.exports.update = async function(req, res) {
     try {
         const position = await Position.findOneAndUpdate(
             {_id:req.params.id},
